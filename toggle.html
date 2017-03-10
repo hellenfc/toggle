@@ -1,0 +1,100 @@
+<html>
+
+<head>
+    <style>
+        /* The switch - the box around the slider */
+
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 20px;
+            margin-bottom: 10px;
+            
+        }
+        /* Hide default HTML checkbox */
+
+        .switch input {
+            display: none;
+        }
+
+        /* The slider */
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            -webkit-transition: .2s;
+            transition: .2s;
+            bottom: 5px;
+            
+
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 28px;
+            width: 28px;
+            left: -1px;
+            bottom: 1px;
+            background-color: #ffffff;
+            -webkit-transition: .2s;
+            transition: .2s;
+            top: -7px;
+            box-shadow: 0 1px 2px grey;
+/*            0 4px 8px 0 rgba(0, 0, 0, 0.2)*/
+        }
+
+        input:checked+.slider {
+            background-color: #f5f07c;
+        }
+        input:checked+.slider:before{
+          background-color: #ffe70e;
+        }
+
+        input:focus+.slider {
+            box-shadow: 0 0 1px #f5f07c;
+        }
+
+        input:checked+.slider:before {
+            -webkit-transform: translateX(33px);
+            -ms-transform: translateX(33px);
+            transform: translateX(33px);
+        }
+        /* Rounded sliders */
+
+        .slider.round {
+            border-radius: 34px;
+        }
+
+        .slider.round:before {
+            border-radius: 50%;
+        }
+    </style>
+    <script>
+        function isChanged(event){
+           alert("Hello");
+        }
+    </script>
+
+</head>
+
+<body>
+
+    <label class="switch">
+        <input type="checkbox" onclick="isChanged(this)">
+        <div class="slider round"></div>
+    </label>
+    <br>
+    <label id="toggle" >
+    Input Change
+    </label>
+
+</body>
+
+</html>
